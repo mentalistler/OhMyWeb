@@ -44,7 +44,7 @@ def index_method1(url,username,password,content):
 def brute(url, username, password):
     hebele +=1
     hebele2 +=1
-    if(hebele ==100):
+    if(hebele ==500):
         colorprint.resultprint(f"{hebele2} tane tarandı!")
         hebele = 0
     login_url = f'{url}/wp-login.php'
