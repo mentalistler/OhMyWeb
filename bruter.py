@@ -11,7 +11,7 @@ def trigger(url, passwords):
     if usernames is None:
         if(other_username):
             #colorprint.colorprint(f"{url} Kullanıcı adı bulunamadı. admin ve test kullanıcı adları denenecek.", "w")
-            print("")
+            #print("")
             usernames = ["admin"]
         else:
             usernames = []
