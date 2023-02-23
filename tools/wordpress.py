@@ -78,7 +78,7 @@ def fileread(url, usernames, passwords):
     global hebele, hebele2
     hebele +=1
     hebele2 +=1
-    if(hebele ==500):
+    if(hebele ==1000):
         colorprint.resultprint(f"{hebele2} tane tarandı!")
         hebele = 0
     for username in usernames:
