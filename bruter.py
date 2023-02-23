@@ -58,4 +58,4 @@ def main(num_threads):
         t.join()
 
 if __name__ == "__main__":
-    main(100)
+    main(30)
