@@ -10,7 +10,7 @@ def trigger(url, passwords):
     usernames = wordpress.getwpusers.user_check(url)
     if usernames is None:
         if(other_username):
-            colorprint.colorprint(f"{url} Kullanıcı adı bulunamadı. admin ve test kullanıcı adları denenecek.", "w")
+            #colorprint.colorprint(f"{url} Kullanıcı adı bulunamadı. admin ve test kullanıcı adları denenecek.", "w")
             print("")
             usernames = ["admin"]
         else:
