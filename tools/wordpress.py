@@ -42,6 +42,7 @@ def index_method1(url,username,password,content):
     pass
 
 def brute(url, username, password):
+    global hebele, hebele2
     hebele +=1
     hebele2 +=1
     if(hebele ==500):
