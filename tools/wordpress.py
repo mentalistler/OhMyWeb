@@ -42,12 +42,6 @@ def index_method1(url,username,password,content):
     pass
 
 def brute(url, username, password):
-    global hebele, hebele2
-    hebele +=1
-    hebele2 +=1
-    if(hebele ==500):
-        colorprint.resultprint(f"{hebele2} tane tarandı!")
-        hebele = 0
     login_url = f'{url}/wp-login.php'
     session = requests.session()
 
@@ -81,6 +75,12 @@ def url2domain(url):
     return domain_with_protocol
 
 def fileread(url, usernames, passwords):
+    global hebele, hebele2
+    hebele +=1
+    hebele2 +=1
+    if(hebele ==500):
+        colorprint.resultprint(f"{hebele2} tane tarandı!")
+        hebele = 0
     for username in usernames:
         username = username.replace('-','.')
         for password in passwords:
