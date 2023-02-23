@@ -5,14 +5,14 @@ import re
 from urllib.parse import urlparse
 
 def trigger(url, passwords):
-    other_username = False
+    other_username = True
     url = wordpress.url2domain(url)
     usernames = wordpress.getwpusers.user_check(url)
     if usernames is None:
         if(other_username):
             colorprint.colorprint(f"{url} Kullanıcı adı bulunamadı. admin ve test kullanıcı adları denenecek.", "w")
             print("")
-            usernames = ["test", "admin"]
+            usernames = ["admin"]
         else:
             usernames = []
     if wordpress.is_wordpress(url):
@@ -58,4 +58,4 @@ def main(num_threads):
         t.join()
 
 if __name__ == "__main__":
-    main(30)
+    main(200)
