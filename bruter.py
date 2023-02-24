@@ -12,7 +12,7 @@ def trigger(url, passwords):
         if(other_username):
             #colorprint.colorprint(f"{url} Kullanıcı adı bulunamadı. admin ve test kullanıcı adları denenecek.", "w")
             #print("")
-            usernames = ["admin"]
+            usernames = ["admin","test","demo"]
         else:
             usernames = []
     if wordpress.is_wordpress(url):
