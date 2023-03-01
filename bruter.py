@@ -58,4 +58,4 @@ def main(num_threads):
         t.join()
 
 if __name__ == "__main__":
-    main(1000)
+    main(5000)
