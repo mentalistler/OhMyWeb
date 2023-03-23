@@ -26,7 +26,7 @@ def is_wordpress(url):
 
 
 def dchook(mesaj):
-    url = 'https://discord.com/api/webhooks/1088229701782351912/_leK2Mr4P2KZuYrseFDnkIsizfmPSxWXNSYZ3QuJMMThm0PK5OqdegkJ1ecOiu70Vhh8'
+    url = 'https://discord.com/api/webhooks/1088255986764103700/ta9PR3XvLc0EmBUrzVIUG-xo3MmGKaQw2P8DqUqMR2UoKo9V-1D2r28TDlzmxILHOGBw'
     message = mesaj
 
     data = {
